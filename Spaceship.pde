@@ -19,10 +19,10 @@ class Spaceship extends Floater
       myYspeed = 0;
       myPointDirection = 0;
     }
-    public void setXspeed(float x) {
+    public void setXspeed(double x) {
       myXspeed = x;
     }
-    public void setYspeed(float y) {
+    public void setYspeed(double y) {
       myYspeed = y;
     }
     public void setX(float x) {

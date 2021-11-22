@@ -16,6 +16,10 @@ public void draw()
     s[i].show();
   }
   if (keyPressed) {
+    if( key == 'j') {
+      b.setX((int)(Math.random()*300));
+      b.setY((int)(Math.random()*300));
+    }
     if (key == 'a')  {
       if (b.getXspeed() > 0.2 || b.getYspeed() > 0.2) {
         b.setXspeed(0.2);

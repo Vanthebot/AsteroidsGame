@@ -21,34 +21,19 @@ public void draw()
       b.setY((int)(Math.random()*300));
     }
     if (key == 'a')  {
-      if (b.getXspeed() > 0.2 || b.getYspeed() > 0.2) {
-        b.setXspeed(0.2);
-        b.setYspeed(0.2);
-      }
       b.turn(-10);
-      b.accelHor(-0.2);
     }
     if (key == 'd') {
-      if (b.getXspeed() > 0.2 || b.getYspeed() > 0.2) {
-        b.setXspeed(0.2);
-        b.setYspeed(0.2);
-      }
       b.turn(10);
-      b.accelHor(0.2);
     }
     if (key == 'w') {
-      if (b.getXspeed() > 0.2 || b.getYspeed() > 0.2) {
-        b.setXspeed(0.2);
-        b.setYspeed(0.2);
-      }
-      b.accelVert(0.2);
+     b.accelerate(0.2);
+     if (b.getXspeed() > 0.2 || b.getYspeed() > 0.2)
+       b.setXspeed(0.2);
+       b.setYspeed(0.2);
     }
     if (key == 's') {
-      if (b.getXspeed() > 0.2 || b.getYspeed() > 0.2) {
-        b.setXspeed(0.2);
-        b.setYspeed(0.2);
-      }
-      b.accelVert(-0.2);
+      b.accelerate(-0.2);
     }
   }
   b.move();

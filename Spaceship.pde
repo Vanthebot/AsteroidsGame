@@ -37,18 +37,4 @@ class Spaceship extends Floater
     public double getYspeed() {
       return myYspeed;
     }
-    public void accelHor (double dAmount)   
-  {          
-    //convert the current direction the floater is pointing to radians    
-    double dRadians = myPointDirection*(Math.PI/180);     
-    //change coordinates of direction of travel    
-    myXspeed += ((dAmount) * Math.cos(dRadians));           
-  }    
-  public void accelVert (double dAmount)   
-  {          
-    //convert the current direction the floater is pointing to radians    
-    double dRadians = myPointDirection*(Math.PI/180);     
-    //change coordinates of direction of travel    
-    myYspeed += ((dAmount) * Math.sin(dRadians));       
-  }   
 }

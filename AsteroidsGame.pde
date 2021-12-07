@@ -1,4 +1,5 @@
 Star [] s = new Star[100];
+ArrayList <Asteroid> a = new ArrayList <Asteroid> ();
 Spaceship b; 
 public void setup() 
 {
@@ -7,6 +8,9 @@ public void setup()
   for (int i = 0; i < s.length; i++) {
     s[i] = new Star();
   }
+  for (int i = 0; i < 10; i++){
+    a.add(i, new Asteroid());
+  }
   b = new Spaceship();
 }
 public void draw() 
@@ -14,6 +18,11 @@ public void draw()
   background(0);
   for (int i = 0; i < s.length; i++){
     s[i].show();
+  }
+  for (int i = 0; i < a.size(); i++){
+    a.get(i).spin();
+    a.get(i).move();
+    a.get(i).show();
   }
   if (keyPressed) {
     if( key == 'j') {
@@ -28,9 +37,9 @@ public void draw()
     }
     if (key == 'w') {
      b.accelerate(2);
-     if (b.getXspeed() > 2 || b.getYspeed() > 2)
-       b.setXspeed(0);
-       b.setYspeed(0);
+     //if (b.getXspeed() > 2 || b.getYspeed() > 2)
+       //b.setXspeed(0);
+       //b.setYspeed(0);
     }
     if (key == 's') {
       b.accelerate(-2);

@@ -2,6 +2,7 @@ Star [] star = new Star[100];
 ArrayList <Asteroid> ast = new ArrayList <Asteroid> ();
 Spaceship b;
 boolean a, w, s, d;
+
 public void setup() 
 {
   size(300,300);
@@ -14,6 +15,7 @@ public void setup()
   }
   b = new Spaceship();
 }
+
 public void draw() 
 {
   background(0);
@@ -27,6 +29,27 @@ public void draw()
   }
   b.move();
   b.show();
+  
+  if(w) {
+    b.accelerate(0.1);
+  }
+  if(b.getXspeed() > 1 && b.getYspeed() > 1){
+    b.setXspeed(1);
+    b.setYspeed(1);
+  }
+  if(s) {
+    b.accelerate(-0.1);
+  }
+  if(b.getXspeed() < -1 && b.getYspeed() < -1){
+    b.setXspeed(-1);
+    b.setYspeed(-1);
+  }
+  if(a) {
+    b.turn(-5);
+  }
+  if(d) {
+    b.turn(5);
+  }
 }
 
 public void keyPressed(){
@@ -41,6 +64,9 @@ public void keyPressed(){
   }
   if(key == 'd'){
     d = true;
+  }
+  if(key == 'j'){
+    b.hyperspace();
   }
 }
 

@@ -31,18 +31,18 @@ public void draw()
   b.show();
   
   if(w) {
-    b.accelerate(0.1);
+    b.accelerate(0.5);
   }
-  if(b.getXspeed() > 1 && b.getYspeed() > 1){
-    b.setXspeed(1);
-    b.setYspeed(1);
+  while(b.getXspeed() > 0.5 && b.getYspeed() > 0.5){
+    b.setXspeed(0.5);
+    b.setYspeed(0.5);
   }
   if(s) {
-    b.accelerate(-0.1);
+    b.accelerate(-0.5);
   }
-  if(b.getXspeed() < -1 && b.getYspeed() < -1){
-    b.setXspeed(-1);
-    b.setYspeed(-1);
+  while(b.getXspeed() < -0.5 && b.getYspeed() < -0.5){
+    b.setXspeed(-0.5);
+    b.setYspeed(-0.5);
   }
   if(a) {
     b.turn(-5);

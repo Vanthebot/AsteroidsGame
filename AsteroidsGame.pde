@@ -10,7 +10,7 @@ public void setup()
   for (int i = 0; i < star.length; i++) {
     star[i] = new Star();
   }
-  for (int i = 0; i < 10; i++){
+  for (int i = 0; i < 8; i++){
     ast.add(i, new Asteroid());
   }
   b = new Spaceship();
@@ -31,18 +31,10 @@ public void draw()
   b.show();
   
   if(w) {
-    b.accelerate(0.5);
-  }
-  while(b.getXspeed() > 0.5 && b.getYspeed() > 0.5){
-    b.setXspeed(0.5);
-    b.setYspeed(0.5);
+    b.accelerate(0.02);
   }
   if(s) {
-    b.accelerate(-0.5);
-  }
-  while(b.getXspeed() < -0.5 && b.getYspeed() < -0.5){
-    b.setXspeed(-0.5);
-    b.setYspeed(-0.5);
+    b.accelerate(-0.02);
   }
   if(a) {
     b.turn(-5);

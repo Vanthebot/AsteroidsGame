@@ -30,10 +30,9 @@ class Asteroid extends Floater
     myPointDirection += rotSpeed;
   }
   public void move() {
-    myCenterX += myXspeed;
     myCenterY += myYspeed;
     if (myCenterX >= 300 || myCenterY >= 300) {
-      myCenterX = 0;
+      myCenterX = Math.random()*300;
       myCenterY = 0;
     }
   }
@@ -63,6 +62,9 @@ class Asteroid extends Floater
     rotate(-1*dRadians);
     translate(-1*(float)myCenterX, -1*(float)myCenterY);
   }   
+}
+public void disappear() {
+  if (
 }
  
 

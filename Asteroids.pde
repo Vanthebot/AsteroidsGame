@@ -24,7 +24,7 @@ class Asteroid extends Floater
     rotSpeed = Math.random()*4 +1;
     myXspeed = Math.random() + 0.5;
     myYspeed = Math.random() + 0.5;
-    myColor = color(255);
+    myColor = color(66, 58, 52);
 }
   public void spin() {
     myPointDirection += rotSpeed;
@@ -38,7 +38,7 @@ class Asteroid extends Floater
   }
   public void show ()  //Draws the floater at the current position  
   {             
-    noFill();   
+    fill(myColor);   
     stroke(myColor);    
     
     //translate the (x,y) center of the ship to the correct position
@@ -63,10 +63,4 @@ class Asteroid extends Floater
     translate(-1*(float)myCenterX, -1*(float)myCenterY);
   }   
 }
-public void disappear() {
-  if (
-}
- 
 
-//might need to make 3 more different move functions to get 
-//asteroids to move in 4 different directions

@@ -27,6 +27,16 @@ public void draw()
     ast.get(i).move();
     ast.get(i).show();
   }
+  for (int nI = 0; nI < ast.size(); nI++)
+  {
+    if (dist((float)ast.get(nI).myCenterX, (float)ast.get(nI).myCenterY, (float)b.myCenterX, (float)b.myCenterY) < 20) 
+    {
+      ast.get(nI).myColor = 0;
+    }
+    if (ast.get(nI).myCenterY == 0)
+      ast.get(nI).myColor = color(66, 58, 52);
+  }  
+
   b.move();
   b.show();
   
